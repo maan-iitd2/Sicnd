@@ -22,14 +22,11 @@ OLLAMA_MODEL = os.environ.get("SICND_OLLAMA_MODEL", "qwen2.5:7b-instruct")
 OLLAMA_HOST = os.environ.get("OLLAMA_HOST", "http://127.0.0.1:11434")
 
 # ---------------------------------------------------------------- ace-step
-# bfloat16 + CPU offload + overlapped decode is the tested recipe for 8 GB
-# VRAM cards like the RTX 4050.
-ACESTEP_DTYPE = "bfloat16"
-ACESTEP_CPU_OFFLOAD = True
-ACESTEP_OVERLAPPED_DECODE = True
-ACESTEP_TORCH_COMPILE = False       # first-run compile is slow on Windows
-ACESTEP_INFER_STEPS = 27            # quality/speed sweet spot
-ACESTEP_GUIDANCE_SCALE = 15.0
+# v1.5 API. CPU offload keeps the DiT + 5Hz LM within 8 GB VRAM (RTX 4050);
+# the 0.6B LM is the smallest that still handles CoT metadata/caption work.
+ACESTEP_CONFIG = os.environ.get("SICND_ACESTEP_CONFIG", "acestep-v15-turbo")
+ACESTEP_LM_MODEL = os.environ.get("SICND_ACESTEP_LM", "acestep-5Hz-lm-0.6B")
+ACESTEP_OFFLOAD_CPU = True
 DEFAULT_DURATION_SEC = 150          # ~2.5 min; keep <=180 on 8 GB VRAM
 
 # ---------------------------------------------------------------- demucs
