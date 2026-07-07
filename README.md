@@ -103,13 +103,28 @@ git clone https://github.com/ace-step/ACE-Step-1.5 ..\ACE-Step-1.5
 pip install -e ..\ACE-Step-1.5
 ```
 
-### 4. Pull the LLM
+### 4. Use an existing Ollama model
+
+The default is `qwen2.5:7b-instruct` (4.7 GB, great for songwriting instructions).
+Use a different model by setting the env var:
 
 ```powershell
-ollama pull llama3.1:8b
+# See what you have
+ollama list
+
+# Use a specific model
+set SICND_OLLAMA_MODEL=qwen3:8b
+python main.py
+
+# Or pull a new one first
+ollama pull mistral
+set SICND_OLLAMA_MODEL=mistral
 ```
 
-Prefer Mistral? `ollama pull mistral` and set `SICND_OLLAMA_MODEL=mistral`.
+If you don't have any models yet:
+```powershell
+ollama pull qwen2.5:7b-instruct
+```
 
 ### 5. First run
 
