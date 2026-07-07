@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.python-version
+
+# Model weights & checkpoints (downloaded locally, never committed)
+models/*
+!models/.gitkeep
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.index
+*.bin
+
+# Generated audio & intermediate files
+outputs/*
+!outputs/.gitkeep
+*.wav
+*.mp3
+*.flac
+*.m4a
+*.ogg
+
+# Reference tracks are personal audio - keep the folder, ignore the audio
+reference_tracks/**/*.mp3
+reference_tracks/**/*.wav
+reference_tracks/**/*.flac
+reference_tracks/**/*.m4a
+
+# Training datasets built by clone_voice.py
+datasets/
+
+# Tool caches
+.cache/
+separated/
+.ruff_cache/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Keep folder placeholders
+!**/.gitkeep
