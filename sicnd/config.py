@@ -15,10 +15,10 @@ ACESTEP_CHECKPOINT_DIR = MODELS_DIR / "acestep"   # ACE-Step downloads here
 RVC_MODELS_DIR = MODELS_DIR / "rvc"               # <voice>.pth / <voice>.index
 
 # ---------------------------------------------------------------- ollama
-# Any model you've pulled works; llama3.1:8b is a good default for 8 GB VRAM
-# machines because it can run alongside nothing else (we unload it before
-# ACE-Step starts).
-OLLAMA_MODEL = os.environ.get("SICND_OLLAMA_MODEL", "llama3.1:8b")
+# Any model you've pulled works. qwen2.5:7b-instruct is the default —
+# good at following instructions for songwriting. You can override:
+#   set SICND_OLLAMA_MODEL=qwen3:8b  (or mistral, gemma3:4b, etc.)
+OLLAMA_MODEL = os.environ.get("SICND_OLLAMA_MODEL", "qwen2.5:7b-instruct")
 OLLAMA_HOST = os.environ.get("OLLAMA_HOST", "http://127.0.0.1:11434")
 
 # ---------------------------------------------------------------- ace-step
