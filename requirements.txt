@@ -1,0 +1,27 @@
+# ============================================================
+# Sicnd requirements
+#
+# IMPORTANT - install order matters (see README for full steps):
+#   1. Install PyTorch with CUDA FIRST (not from this file):
+#        pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu121
+#   2. Then: pip install -r requirements.txt
+# ============================================================
+
+# --- songwriting brain (talks to the local Ollama server) ---
+ollama>=0.3
+
+# --- music generation: ACE-Step 1.5 ---
+acestep @ git+https://github.com/ace-step/ACE-Step-1.5.git
+
+# --- stem separation (vocals vs instrumental) ---
+demucs>=4.0
+
+# --- voice cloning inference (RVC) ---
+rvc-python>=0.1.5
+
+# --- narration / spoken word TTS ---
+kokoro>=0.9.4
+soundfile>=0.12
+
+# --- misc ---
+numpy

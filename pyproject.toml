@@ -1,0 +1,15 @@
+[project]
+name = "sicnd"
+version = "0.1.0"
+description = "Local conversational AI music studio: Ollama + ACE-Step + RVC + Kokoro + ffmpeg"
+readme = "README.md"
+requires-python = ">=3.10,<3.12"
+
+# NOTE: install torch with CUDA first, then `pip install -r requirements.txt`.
+# This file exists for tooling/metadata; requirements.txt is the source of
+# truth for the MVP because several audio packages need a specific install
+# order on Windows.
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
