@@ -11,7 +11,7 @@
 ollama>=0.3
 
 # --- music generation: ACE-Step 1.5 ---
-acestep @ git+https://github.com/ace-step/ACE-Step-1.5.git
+ace-step @ git+https://github.com/ace-step/ACE-Step-1.5.git
 
 # --- stem separation (vocals vs instrumental) ---
 demucs>=4.0

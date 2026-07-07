@@ -15,7 +15,7 @@ from . import config
 def generate_song(plan, out_path: Path) -> Path:
     """Render `plan` (a SongPlan) to a wav file at `out_path`."""
     try:
-        from acestep.pipeline_ace_step import ACEStepPipeline
+        from ace_step.pipeline_ace_step import ACEStepPipeline
     except ImportError as e:
         raise RuntimeError(
             "ACE-Step is not installed. Run:\n"
