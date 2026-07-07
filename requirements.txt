@@ -17,7 +17,10 @@ ace-step @ git+https://github.com/ace-step/ACE-Step-1.5.git
 demucs>=4.0
 
 # --- voice cloning inference (RVC) ---
-rvc-python>=0.1.5,<1.0
+# OPTIONAL: skip on first install due to dependency conflicts.
+# Install later when ready to clone voices:
+#   pip install "rvc-python<1.0,>=0.1.5"
+# rvc-python>=0.1.5,<1.0
 
 # --- narration / spoken word TTS ---
 kokoro>=0.7.16
